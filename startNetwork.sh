@@ -649,10 +649,10 @@ fi
 source ./env.sh
 
 # Start minikube
-if minikube status | grep -q 'host: Stopped'; then
-  command "Starting Network"
-  minikube start
-fi
+#if minikube status | grep -q 'host: Stopped'; then
+#  command "Starting Network"
+#  minikube start
+#fi
 
 # Use configuration file to generate kubernetes setup from the template
 ./applyConfig.sh
@@ -660,10 +660,10 @@ fi
 mkdir -p $TMP_FOLDER/hyperledger
 
 # Mount tmp folder
-small_sep
-command "Mounting tmp folder to minikube"
-minikube mount $TMP_FOLDER/hyperledger:/hyperledger &
-sleep 3
+#small_sep
+#command "Mounting tmp folder to minikube"
+#minikube mount $TMP_FOLDER/hyperledger:/hyperledger &
+#sleep 3
 
 small_sep
 kubectl create -f $K8S/namespace.yaml
